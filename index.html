@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteration 1 - Card Deck</title>
+    <style>
+        .card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 36px;
+            height: 48px;
+        }
+
+        .rank {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 0 0 4px;
+        }
+
+        .suit {
+            font-size: 21px;
+            padding-left: 6px;
+        }
+    </style>
+</head>
+<body>
+    <section class="deck">
+
+    </section>
+
+    <script>
+        const cardDeck = document.querySelector(".deck");
+
+        class Card {
+            constructor (suit, rank) {
+                this.suit = suit;
+                this.rank = rank;
+            }
+        }
+
+        const card_list = [
+            new Card("♠️", "A"),
+            // new Card("♠️", "2"),
+            // new Card("♠️", "3"),
+            // new Card("♠️", "4"),
+            // new Card("♠️", "5"),
+            // new Card("♠️", "6"),
+            // new Card("♠️", "7"),
+            // new Card("♠️", "8"),
+            // new Card("♠️", "9"),
+            // new Card("♠️", "10"),
+            // new Card("♠️", "J"),
+            // new Card("♠️", "Q"),
+            // new Card("♠️", "K"),
+        ]
+
+        cardDeck.innerHTML = card_list.map(
+            card => `<div class="card">
+                    <div class="rank">${card.rank}</div>
+                    <div class="suit">${card.suit}</div>
+                </div>`
+        ).join("");
+    </script>
+</body>
+</html>
