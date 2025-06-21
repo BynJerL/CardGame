@@ -13,23 +13,45 @@
         }
 
         .card {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
-            border: 1px solid black;
-            border-radius: 5px;
+            box-shadow: 1px 1px 2px;
+            background-color: whitesmoke;
+            border-radius: 3px;
             width: 36px;
             height: 48px;
+            user-select: none;
+            position: relative;
         }
 
         .rank {
-            font-size: 12px;
+            width: 15px;
+            font-size: 10px;
             font-weight: 600;
-            padding: 4px 0 0 4px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .suit-mini {
+            width: 15px;
+            font-size: 10px;
+            font-weight: 600;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 10.5px;
         }
 
         .suit {
-            font-size: 21px;
+            font-size: 20px;
             padding-left: 6px;
+            position: absolute;
+            bottom: 2px;
+            right: 0;
         }
     </style>
 </head>
@@ -117,6 +139,7 @@
         cardDeck.innerHTML = card_list.map(
             card => `<div class="card">
                     <div class="rank">${card.rank}</div>
+                    <div class="suit-mini">${card.suit}</div>
                     <div class="suit">${card.suit}</div>
                 </div>`
         ).join("");
